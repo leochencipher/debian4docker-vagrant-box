@@ -8,12 +8,6 @@
 #--------------------------------------------------------------------------------------
 
 #
-# enable memory and swap cgroup
-#
-perl -p -i -e 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"/g'  /etc/default/grub
-/usr/sbin/update-grub
-
-#
 # Install Kernel 3.14 from wheezy-backports
 #
 echo "deb http://http.debian.net/debian wheezy-backports main" > /etc/apt/sources.list.d/docker.list
@@ -42,3 +36,9 @@ gpasswd -a ${USER} docker
 # Restart the Docker daemon
 #
 service docker restart
+
+#
+# enable memory and swap cgroup
+#
+perl -p -i -e 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"/g'  /etc/default/grub
+/usr/sbin/update-grub
