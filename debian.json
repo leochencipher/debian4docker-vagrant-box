@@ -59,8 +59,6 @@
         "scripts/docker.sh",
         "scripts/fig.sh",
         "scripts/clean-light.sh",
-        "scripts/clean-kernel.sh",
-        "scripts/clean-heavy.sh",
         "scripts/remove-history.sh",
         "scripts/zero-free-space.sh"
       ]
