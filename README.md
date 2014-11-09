@@ -1,4 +1,4 @@
-vagrant-box-debian2docker
+debian-vagrant-box
 =========================
 Orignal project from [ffuenf/vagrant-boxes] (https://github.com/ffuenf/vagrant-boxes).
 
