@@ -24,17 +24,14 @@ curl -sSL https://get.docker.com/ | sh
 #
 # Add the docker group if it doesn't already exist.
 #
-echo " --> Updating docker group"
+echo " --> Adding docker group"
 groupadd docker
 
 #
-# Add the connected user "${USER}" to the docker group.
-# Change the user name to match your preferred user.
-# You may have to logout and log back in again for
-# this to take effect.
+# Add the user docker to the docker group.
 #
-gpasswd -a ${USER} docker
-
+echo " --> Adding docker user"
+useradd docker -g docker -G sudo
 
 #
 # Solves AUFS layers limitation
