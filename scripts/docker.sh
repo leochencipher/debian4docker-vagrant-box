@@ -56,7 +56,6 @@ fi
 echo " --> Restarting docker"
 service docker restart
 
-
 #
 # enable memory and swap cgroup to avoid docker complains
 #  @see https://meta.discourse.org/t/fix-for-warning-no-swap-limit-support-error-when-bootstrapping-discourse/16622
