@@ -22,3 +22,9 @@ apt-get -y install rsync
 
 # install make
 apt-get -y install make
+
+#
+# install tools build small images
+#  @see https://github.com/unclejack/debian2docker/blob/master/Dockerfile
+#
+apt-get -y install busybox-static adduser bzip2 xz-utils nano insserv kmod sudo debootstrap cpio isolinux syslinux xorriso
