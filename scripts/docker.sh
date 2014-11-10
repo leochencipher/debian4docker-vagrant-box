@@ -61,6 +61,12 @@ service docker restart
 # enable memory and swap cgroup to avoid docker complains
 #  @see https://meta.discourse.org/t/fix-for-warning-no-swap-limit-support-error-when-bootstrapping-discourse/16622
 #
-echo " --> Solving swap limit warning"
-sed -ri 's/GRUB_CMDLINE_LINUX="(.*)"/GRUB_CMDLINE_LINUX="\1 cgroup_enable=memory swapaccount=1"/' /etc/default/grub
-/usr/sbin/update-grub
+GRUB_CONFIGURATION_FILE="/etc/default/grub"
+
+if grep -q swapaccount $GRUB_CONFIGURATION_FILE; then
+	echo " --> Limit warning already solved !"
+else
+	echo " --> Solving swap limit warning"
+	sed -ri 's/GRUB_CMDLINE_LINUX="(.*)"/GRUB_CMDLINE_LINUX="\1 cgroup_enable=memory swapaccount=1"/' $GRUB_CONFIGURATION_FILE
+	/usr/sbin/update-grub
+fi
