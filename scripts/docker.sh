@@ -31,7 +31,7 @@ groupadd docker
 # Add the user docker to the docker group.
 #
 echo " --> Adding docker user"
-useradd docker -g docker -G sudo
+useradd -m docker -g docker -G sudo
 
 #
 # Solves AUFS layers limitation
