@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/sh -e
 
 #
 # Cleans old box

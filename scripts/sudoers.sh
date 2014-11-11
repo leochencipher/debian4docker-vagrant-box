@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/sh -e
 
 # Only add the secure path line if it is not already present - Debian 7
 # includes it by default.

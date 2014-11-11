@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/sh -e
 
 # Zero out the free space to save space in the final image:
 echo "Zeroing device to make space..."

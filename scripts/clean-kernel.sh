@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/sh -e
 
 rm -rf /lib/modules/*/kernel/sound/*
 rm -rf /lib/modules/*/kernel/drivers/infiniband/*
