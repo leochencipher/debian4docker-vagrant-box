@@ -47,3 +47,8 @@ rm -rf /usr/src/vboxguest*
 # Remove man pages
 rm -rf /usr/share/man/??
 rm -rf /usr/share/man/??_*
+
+#
+# Clean all unrequested deps
+#
+apt-get -y autoremove
