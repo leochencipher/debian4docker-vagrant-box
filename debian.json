@@ -16,7 +16,7 @@
         "auto <wait>",
         "locale=fr_FR.UTF-8 <wait>",
         "kbd-chooser/method=fr <wait>",
-        "netcfg/get_hostname={{ .Name }} <wait>",
+        "netcfg/get_hostname=debian <wait>",
         "netcfg/get_domain=localdomain <wait>",
         "fb=false <wait>",
         "debconf/frontend=noninteractive <wait>",
