@@ -35,7 +35,7 @@ apt-get -y install curl rsync make
 #  @see https://github.com/pjkundert/cpppo/blob/master/packer/debian-8-amd64/scripts/base.sh
 #
 echo " --> Installing tools to build iso"
-apt-get -y install busybox-static adduser bzip2 xz-utils nano insserv kmod sudo debootstrap cpio isolinux syslinux xorriso
+apt-get -y install busybox-static adduser bzip2 xz-utils nano insserv kmod sudo debootstrap cpio isolinux syslinux syslinux-common xorriso
 
 #
 # Remove 5s grub timeout to speed up booting
