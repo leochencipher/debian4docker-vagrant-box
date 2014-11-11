@@ -28,14 +28,7 @@ apt-get -y install linux-headers-$(uname -r)
 # Installing usefull tools
 #
 echo " --> Installing usefull tools"
-apt-get -y install curl rsync make
-
-#
-# install tools build small images
-#  @see https://github.com/pjkundert/cpppo/blob/master/packer/debian-8-amd64/scripts/base.sh
-#
-echo " --> Installing tools to build iso"
-apt-get -y install busybox-static adduser bzip2 xz-utils nano insserv kmod sudo debootstrap cpio isolinux syslinux syslinux-common xorriso
+apt-get -y install make
 
 #
 # Remove 5s grub timeout to speed up booting
@@ -44,10 +37,3 @@ apt-get -y install busybox-static adduser bzip2 xz-utils nano insserv kmod sudo 
 echo " --> Remove 5s grub timeout to speed up booting"
 sed -ri 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 /usr/sbin/update-grub
-
-#
-# Tweak sshd to prevent DNS resolution (speed up logins)
-#  @see https://github.com/pjkundert/cpppo/blob/master/packer/debian-8-amd64/scripts/base.sh
-# 
-echo "UseDNS no" >> /etc/ssh/sshd_config
-echo "GSSAPIAuthentication no" >> /etc/ssh/sshd_config
