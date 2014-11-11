@@ -71,3 +71,9 @@ rm -rf /var/lib/initramfs-tools
 rm -rf /usr/share/perl
 rm -rf /usr/bin/dpkg*
 rm -rf /var/log/apt
+
+#
+# Clean all unrequested deps
+#
+apt-get -y autoremove
+apt-get clean
