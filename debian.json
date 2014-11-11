@@ -1,7 +1,9 @@
 {
   "variables": {
-    "PACKER_OS_FLAVOUR": "debian",
-    "PACKER_BOX_NAME": "debian-7.7.0-amd64"
+    "PACKER_OS_TYPE": "Debian_64",
+    "PACKER_BOX_NAME": "debian2docker",
+    "PACKER_ISO_URL": "http://cdimage.debian.org/cdimage/daily-builds/daily/current/amd64/iso-cd/debian-testing-amd64-netinst.iso",
+    "PACKER_ISO_CHECKSUM" : "c8f9e2ffc6d9d085ca206255333b4d720e03f5a229383538e65b7a600434dfaec8dad2469acc083b1fe1e057bf46a3c954be1369f43f7ddceae98fd2f015a822"
   },
   "builders": [
     {
@@ -9,28 +11,28 @@
       "boot_command": [
         "<esc><wait>",
         "install <wait>",
-        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `PACKER_BOX_NAME` }}/preseed.cfg <wait>",
-        "debian-installer=en_US <wait>",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
+        "debian-installer=fr_FR.UTF-8 <wait>",
         "auto <wait>",
-        "locale=en_US <wait>",
-        "kbd-chooser/method=us <wait>",
-        "keyboard-configuration/xkb-keymap=us <wait>",
+        "locale=fr_FR.UTF-8 <wait>",
+        "kbd-chooser/method=fr <wait>",
         "netcfg/get_hostname={{ .Name }} <wait>",
-        "netcfg/get_domain=vagrantup.com <wait>",
+        "netcfg/get_domain=localdomain <wait>",
         "fb=false <wait>",
         "debconf/frontend=noninteractive <wait>",
         "console-setup/ask_detect=false <wait>",
-        "console-keymaps-at/keymap=us <wait>",
+        "console-keymaps-at/keymap=fr <wait>",
+        "keyboard-configuration/xkb-keymap=fr(latin9) <wait>",
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "headless": true,
+      "headless": false,
       "disk_size": 10140,
-      "guest_os_type": "Debian_64",
+      "guest_os_type": "{{ user `PACKER_OS_TYPE` }}",
       "http_directory": "http",
-      "iso_checksum": "5cb6e4fea55fbb5173f90c3a545b843c6c193e29c3aa32b3306c9bbdfb1ad6a6a36ae8be50e91af9d03d5f21c472bd05d04d3508172e0b519e76714333c7c74b",
       "iso_checksum_type": "sha512",
-      "iso_url": "http://cdimage.debian.org/cdimage/release/7.7.0/amd64/iso-cd/{{ user `PACKER_BOX_NAME` }}-netinst.iso",
+      "iso_checksum": "{{ user `PACKER_ISO_CHECKSUM` }}",
+      "iso_url": "{{ user `PACKER_ISO_URL` }}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,

@@ -8,18 +8,11 @@
 #--------------------------------------------------------------------------------------
 
 #
-# Install Kernel 3.14 from wheezy-backports
-#
-echo " --> Updating Kernel from backport to enable docker install"
-echo "deb http://http.debian.net/debian wheezy-backports main" > /etc/apt/sources.list.d/docker.list
-apt-get update -qq
-apt-get install -q -y --force-yes -t wheezy-backports linux-image-amd64
-
-#
 # Install Docker using the get.docker.com script
 #
 echo " --> Installing docker"
-curl -sSL https://get.docker.com/ | sh
+apt-get update -qq
+apt-get install -q -y --force-yes docker.io
 
 #
 # Add the docker group if it doesn't already exist.
