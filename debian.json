@@ -1,7 +1,7 @@
 {
   "variables": {
     "PACKER_OS_TYPE": "Debian_64",
-    "PACKER_BOX_NAME": "debian2docker",
+    "PACKER_BOX_NAME": "debian",
     "PACKER_ISO_URL": "http://cdimage.debian.org/cdimage/daily-builds/daily/current/amd64/iso-cd/debian-testing-amd64-netinst.iso",
     "PACKER_ISO_CHECKSUM" : "c8f9e2ffc6d9d085ca206255333b4d720e03f5a229383538e65b7a600434dfaec8dad2469acc083b1fe1e057bf46a3c954be1369f43f7ddceae98fd2f015a822"
   },
@@ -40,7 +40,6 @@
       "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -hP now",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "{{ user `PACKER_BOX_NAME` }}",
       "vboxmanage": [
         [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
