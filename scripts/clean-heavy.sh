@@ -6,7 +6,6 @@
 rm -f /usr/bin/omshell
 rm -f /var/cache/debconf/templates.dat
 rm -f /var/cache/debconf/templates.dat-old
-rm -f /usr/bin/openssl
 rm -f /usr/sbin/visudo
 rm -f /usr/bin/oldfind
 rm -rf /usr/share/mime/*
@@ -22,7 +21,7 @@ rm -f /var/cache/apt/*.bin
 #-------------------------------------------------------------------------------------
 
 # Removing unused packages
-for PACKAGE in apt-utils aptitude man-db manpages info wget dselect
+for PACKAGE in man-db manpages info
 do
 if ! apt-get remove --purge --yes "${PACKAGE}"
 then
@@ -53,7 +52,7 @@ done
 #-------------------------------------------------------------------------------------
 # @see https://github.com/unclejack/debian2docker/blob/master/hooks/zz-final.chroot
 #-------------------------------------------------------------------------------------
-dpkg --force-all -P debian-archive-keyring busybox live-tools apt file debconf-i18n klibc-utils libklibc initramfs-tools cpio gcc-4.7-base:amd64
+dpkg --force-all -P debian-archive-keyring busybox live-tools file klibc-utils libklibc initramfs-tools cpio gcc-4.7-base:amd64
 rm -rf /usr/share/file
 rm -rf /usr/share/zoneinfo
 rm -rf /var/lib/dpkg
