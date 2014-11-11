@@ -4,7 +4,7 @@
 # CUSTOMIZE PROFILE TO MAKE IT MORE FANCY
 #--------------------------------------------------------------------------------------
 
-PROFILE_FILES=("/home/vagrant/.bashrc" "/home/docker/.bashrc")
+PROFILE_FILES=("/home/vagrant/.bashrc")
 
 #
 # For each profile, do the work
