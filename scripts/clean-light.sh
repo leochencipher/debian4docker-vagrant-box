@@ -52,3 +52,4 @@ rm -rf /usr/share/man/??_*
 # Clean all unrequested deps
 #
 apt-get -y autoremove
+apt-get clean
