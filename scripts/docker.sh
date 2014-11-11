@@ -21,10 +21,10 @@ echo " --> Adding docker group"
 groupadd docker
 
 #
-# Add the user docker to the docker group.
+# Add the right to vagrant user to enable docker
 #
-echo " --> Adding docker user"
-useradd -m docker -g docker -G sudo
+echo " --> Adding docker rights to vagrant user"
+usermod -a -G docker vagrant
 
 #
 # Solves AUFS layers limitation
