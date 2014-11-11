@@ -42,7 +42,7 @@ apt-get -y install busybox-static adduser bzip2 xz-utils nano insserv kmod sudo 
 #  @see https://github.com/pjkundert/cpppo/blob/master/packer/debian-8-amd64/scripts/base.sh
 #
 echo " --> Remove 5s grub timeout to speed up booting"
-sed -ri 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' $GRUB_CONFIGURATION_FILE
+sed -ri 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 /usr/sbin/update-grub
 
 #
