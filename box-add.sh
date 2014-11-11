@@ -1,3 +1,3 @@
 #!/bin/sh -e
 
-vagrant box add debian2docker_virtualbox.box --name=AlbanMontaigu/debian --force
+vagrant box add debian_virtualbox.box --name=AlbanMontaigu/debian --force
