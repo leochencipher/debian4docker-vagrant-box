@@ -15,6 +15,11 @@ apt-get update -qq
 apt-get install -q -y --force-yes docker.io
 
 #
+# To avoid remove during cleanup
+#
+apt-mark hold docker.io
+
+#
 # Add the docker group if it doesn't already exist.
 #
 echo " --> Adding docker group"
