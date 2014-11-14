@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 #-------------------------------------------------------------------------------------
 # @See https://github.com/unclejack/debian2docker/blob/master/hooks/clean.chroot

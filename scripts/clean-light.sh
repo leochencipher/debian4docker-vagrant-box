@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 # Clean up
 apt-get -y --purge remove linux-headers-$(uname -r) build-essential
