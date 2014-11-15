@@ -20,12 +20,6 @@ apt-get install -q -y --force-yes docker.io
 apt-mark hold docker.io
 
 #
-# Add the docker group if it doesn't already exist.
-#
-echo " --> Adding docker group"
-groupadd docker
-
-#
 # Add the right to vagrant user to enable docker
 #
 echo " --> Adding docker rights to vagrant user"
