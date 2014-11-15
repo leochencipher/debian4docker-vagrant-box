@@ -60,7 +60,7 @@
         "scripts/docker.sh",
         "scripts/fig.sh",
         "scripts/customize-profile.sh",
-        "scripts/cleanup-kernel.sh"
+        "scripts/cleanup-kernel.sh",
         "scripts/cleanup.sh",
         "scripts/zero-free-space.sh"
       ]
