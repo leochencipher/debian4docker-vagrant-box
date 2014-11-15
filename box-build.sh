@@ -17,7 +17,7 @@ export PACKER_ISO_URL="${PACKER_ISO_BASE_URL}/debian-testing-amd64-netinst.iso"
 #
 # Getting checksum because it changes daily...
 #
-export PACKER_ISO_CHECKSUM=$(curl -L $PACKER_ISO_BASE_URL/SHA512SUMS.small | awk '{ print $1 }')
+export PACKER_ISO_CHECKSUM=$(curl --progress-bar -L $PACKER_ISO_BASE_URL/SHA512SUMS.small | awk '{ print $1 }')
 
 #
 # Launchs the build
