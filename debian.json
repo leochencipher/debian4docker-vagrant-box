@@ -1,9 +1,9 @@
 {
   "variables": {
-    "PACKER_OS_TYPE": "Debian_64",
-    "PACKER_BOX_NAME": "debian",
-    "PACKER_ISO_URL": "http://cdimage.debian.org/cdimage/daily-builds/daily/current/amd64/iso-cd/debian-testing-amd64-netinst.iso",
-    "PACKER_ISO_CHECKSUM" : "398a43d3148f3ab7667729990f3fdd3d70235d2aaa07f987ef4f441a54b70caf88c35ca00b8a3a452df42c97a6934cf88a88e8e4529540fa8af900d339a289ec"
+    "PACKER_OS_TYPE": "{{env `PACKER_OS_TYPE`}}",
+    "PACKER_BOX_NAME": "{{env `PACKER_BOX_NAME`}}",
+    "PACKER_ISO_URL": "{{env `PACKER_ISO_URL`}}",
+    "PACKER_ISO_CHECKSUM" : "{{env `PACKER_ISO_CHECKSUM`}}"
   },
   "builders": [
     {
