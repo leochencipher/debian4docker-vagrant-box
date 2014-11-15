@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 # ---------------------------------------------------------------------------------------------------
 # Global system cleanup to reduce fooprint
 #
@@ -43,7 +42,7 @@ rm -rf VBoxGuestAdditions_*.iso VBoxGuestAdditions_*.iso.?
 # Removing dictionnaries
 #
 echo " --> Dictionnaries cleanup"
-apt-get -y --force-yes purge aspell ispell
+apt-get -y --force-yes purge aspell ispell libaspell15
 
 #
 # Removing man etc
@@ -104,7 +103,7 @@ rm -rf /usr/share/man/??_*
 #
 echo " --> Removing non non-critical package"
 apt-get -y --force-yes purge $(aptitude search '~i!~M!~prequired!~pimportant!~R~prequired!~R~R~prequired!~R~pimportant!~R~R~pimportant!busybox!grub!initramfs-tools' | awk '{print $2}')
-apt-get -y --force-yes purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut doc-linux-fr-text xkb-data
+apt-get -y --force-yes purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut doc-linux-fr-text xkb-data libxapian22 w3m
 
 #
 # Linux cleanup
