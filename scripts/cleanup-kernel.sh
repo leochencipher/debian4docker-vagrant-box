@@ -1,10 +1,11 @@
 #!/bin/sh
 
-# ----------------------------------------------------------------------------------------
-# Global kernel clean
+echo "# ---------------------------------------------------------------------------------------------------"
+echo "# Global kernel clean"
+echo "# ---------------------------------------------------------------------------------------------------"
 #
-#  @see https://github.com/unclejack/debian2docker/blob/master/hooks/kernelclean.chroot
-# ----------------------------------------------------------------------------------------
+# @see https://github.com/unclejack/debian2docker/blob/master/hooks/kernelclean.chroot
+#
 
 rm -rf /lib/modules/*/kernel/sound/*
 rm -rf /lib/modules/*/kernel/drivers/infiniband/*
