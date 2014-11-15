@@ -49,6 +49,34 @@ echo " --> Virtualbox cleanup"
 rm -rf VBoxGuestAdditions_*.iso VBoxGuestAdditions_*.iso.?
 
 #
+# Removing dictionnaries
+#
+echo " --> Dictionnaries cleanup"
+apt-get -y purge aspell ispell
+
+#
+# Removing man etc
+# 
+echo " --> Man doc info cleanup"
+apt-get -y purge man-db manpages info
+
+#
+# Cleanup unused files
+#
+echo " --> Unused files cleanup"
+rm -f /usr/bin/omshell
+rm -f /var/cache/debconf/templates.dat
+rm -f /var/cache/debconf/templates.dat-old
+rm -f /usr/bin/openssl
+rm -f /usr/sbin/visudo
+rm -f /usr/bin/oldfind
+rm -rf /usr/share/mime/*
+rm -rf /usr/share/X11/*
+rm -rf /usr/share/fonts/*
+rm -f /var/lib/dpkg/info/linux-image*-amd64.md5sums
+rm -f /var/lib/apt/lists/*
+
+#
 # Remove unused locales
 #
 echo " --> Removing unused locales"
@@ -83,8 +111,9 @@ rm -rf /usr/share/man/??_*
 #
 # Remove non-critical packages
 #
+echo " --> Removing non non-critical package"
 apt-get -y purge $(aptitude search '~i!~M!~prequired!~pimportant!~R~prequired!~R~R~prequired!~R~pimportant!~R~R~pimportant!busybox!grub!initramfs-tools' | awk '{print $2}')
-apt-get -y purge aptitude
+apt-get -y purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut gnupg gnupg2 doc-linux-fr-text xkb-data
 
 #
 # Clean all unrequested deps
