@@ -9,19 +9,10 @@
 # ---------------------------------------------------------------------------------------------------
 
 #
-# Linux cleanup
-#
-echo " --> Linux cleanup (image, header, source)"
-apt-get -y --force-yes --purge remove linux-headers-$(uname -r) build-essential
-apt-get -y --force-yes purge $(dpkg --list |grep '^rc' |awk '{print $2}')
-apt-get -y --force-yes purge $(dpkg --list |egrep 'linux-image-[0-9]' |awk '{print $3,$2}' |sort -nr |tail -n +2 |grep -v $(uname -r) |awk '{ print $2}')
-dpkg --list | awk '{ print $2 }' | grep linux-source | xargs apt-get -y purge
-
-#
 # Delete development packages
 #
 echo " --> Dev packages cleanup"
-dpkg --list | awk '{ print $2 }' | grep -- '-dev$' | xargs apt-get -y purge
+dpkg --list | awk '{ print $2 }' | grep -- '-dev$' | xargs apt-get -y --force-yes purge
 apt-get -y --force-yes purge cpp gcc g++
 
 # 
@@ -113,7 +104,17 @@ rm -rf /usr/share/man/??_*
 #
 echo " --> Removing non non-critical package"
 apt-get -y --force-yes purge $(aptitude search '~i!~M!~prequired!~pimportant!~R~prequired!~R~R~prequired!~R~pimportant!~R~R~pimportant!busybox!grub!initramfs-tools' | awk '{print $2}')
-apt-get -y --force-yes purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut gnupg gnupg2 doc-linux-fr-text xkb-data
+apt-get -y --force-yes purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut doc-linux-fr-text xkb-data
+
+#
+# Linux cleanup
+#
+echo " --> Linux cleanup (image, header, source)"
+apt-get -y --force-yes purge build-essential
+apt-get -y --force-yes purge $(dpkg --list |grep '^rc' |awk '{print $2}')
+apt-get -y --force-yes purge $(dpkg --list |egrep 'linux-image-[0-9]' |awk '{print $3,$2}' |sort -nr |tail -n +2 |grep -v $(uname -r) |awk '{ print $2}')
+dpkg --list | awk '{ print $2 }' | grep linux-source | xargs apt-get -y --force-yes purge
+dpkg --list | awk '{ print $2 }' | grep linux-headers | xargs apt-get -y --force-yes purge
 
 #
 # Clean all unrequested deps
