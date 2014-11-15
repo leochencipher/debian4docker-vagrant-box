@@ -1,11 +1,12 @@
 #!/bin/sh -e
 
-#--------------------------------------------------------------------------------------
-# DOCKER INSTALLER
+echo "#---------------------------------------------------------------------------------------------------"
+echo "# Docker installation"
+echo "#---------------------------------------------------------------------------------------------------"
 #
-#  @see https://github.com/ffuenf/vagrant-boxes/blob/master/packer/scripts/docker.sh
-#  @see https://docs.docker.com/installation/debian/
-#--------------------------------------------------------------------------------------
+# @see https://github.com/ffuenf/vagrant-boxes/blob/master/packer/scripts/docker.sh
+# @see https://docs.docker.com/installation/debian/
+#
 
 #
 # Install Docker using the get.docker.com script

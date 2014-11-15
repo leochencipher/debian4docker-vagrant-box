@@ -1,5 +1,9 @@
 #!/bin/sh -e
 
+echo "#---------------------------------------------------------------------------------------------------"
+echo "# Installing vm tools (i.e. virtualbox guest additions)"
+echo "#---------------------------------------------------------------------------------------------------"
+
 case "$PACKER_BUILDER_TYPE" in 
 
 virtualbox-iso|virtualbox-ovf) 
