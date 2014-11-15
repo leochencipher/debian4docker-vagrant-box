@@ -12,9 +12,9 @@
 # Linux cleanup
 #
 echo " --> Linux cleanup (image, header, source)"
-apt-get -y --purge remove linux-headers-$(uname -r) build-essential
-apt-get -y purge $(dpkg --list |grep '^rc' |awk '{print $2}')
-apt-get -y purge $(dpkg --list |egrep 'linux-image-[0-9]' |awk '{print $3,$2}' |sort -nr |tail -n +2 |grep -v $(uname -r) |awk '{ print $2}')
+apt-get -y --force-yes --purge remove linux-headers-$(uname -r) build-essential
+apt-get -y --force-yes purge $(dpkg --list |grep '^rc' |awk '{print $2}')
+apt-get -y --force-yes purge $(dpkg --list |egrep 'linux-image-[0-9]' |awk '{print $3,$2}' |sort -nr |tail -n +2 |grep -v $(uname -r) |awk '{ print $2}')
 dpkg --list | awk '{ print $2 }' | grep linux-source | xargs apt-get -y purge
 
 #
@@ -22,25 +22,25 @@ dpkg --list | awk '{ print $2 }' | grep linux-source | xargs apt-get -y purge
 #
 echo " --> Dev packages cleanup"
 dpkg --list | awk '{ print $2 }' | grep -- '-dev$' | xargs apt-get -y purge
-apt-get -y purge cpp gcc g++
+apt-get -y --force-yes purge cpp gcc g++
 
 # 
 # Delete X11 libraries
 #
 echo " --> X11 libraries cleanup"
-apt-get -y purge libx11-data xauth libxmuu1 libxcb1 libx11-6 libxext6
+apt-get -y --force-yes purge libx11-data xauth libxmuu1 libxcb1 libx11-6 libxext6
 
 #
 # Delete obsolete networking
 #
 echo " --> Obsolete networking cleanup"
-apt-get -y purge ppp pppconfig pppoeconf
+apt-get -y --force-yes purge ppp pppconfig pppoeconf
 
 #
 # Delete oddities
 #
 echo " --> Oddies cleanup"
-apt-get -y purge popularity-contest
+apt-get -y --force-yes purge popularity-contest
 
 #
 # Cleanup Virtualbox
@@ -52,13 +52,13 @@ rm -rf VBoxGuestAdditions_*.iso VBoxGuestAdditions_*.iso.?
 # Removing dictionnaries
 #
 echo " --> Dictionnaries cleanup"
-apt-get -y purge aspell ispell
+apt-get -y --force-yes purge aspell ispell
 
 #
 # Removing man etc
 # 
 echo " --> Man doc info cleanup"
-apt-get -y purge man-db manpages info
+apt-get -y --force-yes purge man-db manpages info
 
 #
 # Cleanup unused files
@@ -112,14 +112,14 @@ rm -rf /usr/share/man/??_*
 # Remove non-critical packages
 #
 echo " --> Removing non non-critical package"
-apt-get -y purge $(aptitude search '~i!~M!~prequired!~pimportant!~R~prequired!~R~R~prequired!~R~pimportant!~R~R~pimportant!busybox!grub!initramfs-tools' | awk '{print $2}')
-apt-get -y purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut gnupg gnupg2 doc-linux-fr-text xkb-data
+apt-get -y --force-yes purge $(aptitude search '~i!~M!~prequired!~pimportant!~R~prequired!~R~R~prequired!~R~pimportant!~R~R~pimportant!busybox!grub!initramfs-tools' | awk '{print $2}')
+apt-get -y --force-yes purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut gnupg gnupg2 doc-linux-fr-text xkb-data
 
 #
 # Clean all unrequested deps
 #
 echo " --> Apt global purge and autoremove"
-apt-get -y --purge autoremove
+apt-get -y --force-yes --purge autoremove
 apt-get -y clean
 
 #
