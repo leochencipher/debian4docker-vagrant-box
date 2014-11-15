@@ -42,7 +42,7 @@ rm -rf VBoxGuestAdditions_*.iso VBoxGuestAdditions_*.iso.?
 # Removing dictionnaries
 #
 echo " --> Dictionnaries cleanup"
-apt-get -y --force-yes purge aspell ispell libaspell15
+apt-get -y --force-yes purge dictionaries-common aspell ispell libaspell15
 
 #
 # Removing man etc
@@ -103,7 +103,7 @@ rm -rf /usr/share/man/??_*
 #
 echo " --> Removing non non-critical package"
 apt-get -y --force-yes purge $(aptitude search '~i!~M!~prequired!~pimportant!~R~prequired!~R~R~prequired!~R~pimportant!~R~R~pimportant!busybox!grub!initramfs-tools' | awk '{print $2}')
-apt-get -y --force-yes purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut doc-linux-fr-text xkb-data libxapian22 w3m libgcc-4.9-dev cpp-4.9 libglib2.0-0
+apt-get -y --force-yes purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut doc-linux-fr-text xkb-data libxapian22 w3m libgcc-4.9-dev cpp-4.9 libglib2.0-0 maint-guide-fr developers-reference-fr debian-faq hicolor-icon-theme manpages-fr manpages-fr-extra fonts-dejavu-core groff-base texinfo guile-2.0-libs libgdk-pixbuf2.0-common doc-debian-fr
 
 #
 # Linux cleanup
