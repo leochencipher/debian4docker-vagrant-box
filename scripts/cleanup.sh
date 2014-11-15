@@ -103,7 +103,7 @@ rm -rf /usr/share/man/??_*
 #
 echo " --> Removing non non-critical package"
 apt-get -y --force-yes purge $(aptitude search '~i!~M!~prequired!~pimportant!~R~prequired!~R~R~prequired!~R~pimportant!~R~R~pimportant!busybox!grub!initramfs-tools' | awk '{print $2}')
-apt-get -y --force-yes purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut doc-linux-fr-text xkb-data libxapian22 w3m
+apt-get -y --force-yes purge aptitude aptitude-common libicu52 git libgtk2.0-common geoip-database binutils mutt ifrench-gut doc-linux-fr-text xkb-data libxapian22 w3m libgcc-4.9-dev cpp-4.9 libglib2.0-0
 
 #
 # Linux cleanup
