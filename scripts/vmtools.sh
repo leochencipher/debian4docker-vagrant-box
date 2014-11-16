@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 echo "#---------------------------------------------------------------------------------------------------"
 echo "# Installing vm tools (i.e. virtualbox guest additions)"
