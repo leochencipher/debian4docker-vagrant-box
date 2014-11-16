@@ -77,7 +77,15 @@ for PACKAGE in build-essential \
 				debconf-i18n \
 				ispell \
 				nfs-common \
-				libnfsidmap2 
+				libnfsidmap2 \
+				keyboard-configuration \
+				laptop-detect \
+				tasksel \
+				exim4-daemon-light \
+				bind9-host \
+				dns-utils \
+				libxml2
+
 do
 	if ! apt-get --yes --force-yes purge  "${PACKAGE}"
 	then
