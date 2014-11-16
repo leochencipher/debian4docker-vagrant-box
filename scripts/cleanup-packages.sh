@@ -83,7 +83,7 @@ for PACKAGE in build-essential \
 				tasksel \
 				exim4-daemon-light \
 				bind9-host \
-				dns-utils \
+				dnsutils \
 				libxml2
 
 do
