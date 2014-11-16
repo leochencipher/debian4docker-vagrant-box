@@ -35,6 +35,7 @@ rm -rf /lib/modules/*/kernel/drivers/net/arcnet/*
 rm -rf /lib/modules/*/kernel/drivers/net/can/*
 rm -rf /lib/modules/*/kernel/drivers/net/ethernet/qlogic/*
 rm -rf /lib/modules/*/kernel/drivers/net/ethernet/mellanox/*
+rm -rf /lib/modules/*/kernel/drivers/net/ethernet/broadcom/*
 rm -rf /lib/modules/*/kernel/drivers/scsi/bfa/*
 rm -rf /lib/modules/*/kernel/arch/x86/kvm/*
 rm -rf /lib/modules/*/kernel/net/wireless/*
