@@ -84,7 +84,8 @@ for PACKAGE in build-essential \
 				exim4-daemon-light \
 				bind9-host \
 				dnsutils \
-				libxml2
+				libxml2 \
+				at
 
 do
 	if ! apt-get --yes --force-yes purge  "${PACKAGE}"
