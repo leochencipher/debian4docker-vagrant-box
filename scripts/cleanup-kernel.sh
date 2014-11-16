@@ -6,8 +6,10 @@ echo " Global kernel clean"
 echo "-------------------------------------"
 #
 # @see https://github.com/unclejack/debian2docker/blob/master/hooks/kernelclean.chroot
+# @see https://wiki.debian.org/ReduceDebian
 #
 
+echo " --> Removing unused kernel modules"
 rm -rf /lib/modules/*/kernel/sound/*
 rm -rf /lib/modules/*/kernel/drivers/infiniband/*
 rm -rf /lib/modules/*/kernel/drivers/gpu/*
@@ -48,3 +50,12 @@ for i in `ls /lib/modules/`;
 do
 	depmod $i
 done
+
+#
+# Reducing initrd img
+#  @see http://askubuntu.com/questions/299396/how-to-reduce-the-size-of-initrd-img-on-ubuntu-13-04
+#
+echo " --> Reducing initrd img"
+sed -ri 's/MODULES=.*/MODULES=dep/' /etc/initramfs-tools/initramfs.conf
+sed -ri 's/COMPRESS=.*/COMPRESS=xz/' /etc/initramfs-tools/initramfs.conf
+update-initramfs -u -k all
