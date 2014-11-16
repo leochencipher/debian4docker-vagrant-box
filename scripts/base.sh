@@ -66,3 +66,12 @@ echo "blacklist intel_rapl" > /etc/modprobe.d/intel_rapl.conf
 #
 update-initramfs -u -k all
 update-grub
+
+#
+# Reducing reserved space for the root
+#  @see http://forums.debian.net/viewtopic.php?f=16&t=111588#p529834
+#  @see http://www.microhowto.info/howto/reduce_the_space_reserved_for_root_on_an_ext2_ext3_or_ext4_filesystem.html
+#
+echo " --> Reducing reserved space for the root"
+tune2fs -m 1 /dev/sda1
+tune2fs -m 1 /dev/mapper/debian--vg-root
