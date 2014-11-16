@@ -26,12 +26,17 @@ rm -f /var/lib/apt/lists/*
 
 #
 # Unused locales cleanup
-#   Multiple times because one time will be too long
 #
 echo " --> Unused locales cleanup"
-find /usr/share/locale/* ! -name en_US | xargs rm -rvf
-find /usr/share/i18n/locales/* ! -name en_US | xargs rm -rvf
-find /usr/share/i18n/charmaps/* ! -name UTF-8.gz | xargs rm -rvf
+find /usr/share/locale/* ! -name en_US -delete -print
+find /usr/share/i18n/locales/* ! -name en_US -delete -print
+find /usr/share/i18n/charmaps/* ! -name UTF-8.gz -delete -print
+
+#
+# Unused zoneinfo cleanup
+#
+echo " --> Unused zoneinfo cleanup"
+find /usr/share/zoneinfo/* ! -name localtime ! -name CET ! -name UTC ! -name zone.tab ! -name Paris -delete -print
 
 #
 # Docs cleanup
@@ -63,7 +68,7 @@ rm -rf /usr/share/man
 # All ~* files cleanup
 #
 echo " --> All ~* files cleanup"
-find / -name *~ | xargs rm -f
+find / -name *~ -delete -print
 
 #
 # Logs (truncate) cleanup
