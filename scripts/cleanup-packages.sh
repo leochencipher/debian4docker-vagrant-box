@@ -85,8 +85,8 @@ for PACKAGE in build-essential \
 				bind9-host \
 				dnsutils \
 				libxml2 \
-				at
-
+				at \
+				discover
 do
 	if ! apt-get --yes --force-yes purge  "${PACKAGE}"
 	then
