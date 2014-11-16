@@ -29,11 +29,9 @@ rm -f /var/lib/apt/lists/*
 #   Multiple times because one time will be too long
 #
 echo " --> Unused locales cleanup"
-rm -rf /usr/share/locale/{af,am,ar,as,ast,az,bal,be,bg,bn,bn_IN,br,bs,byn,ca,cr,cs,csb,cy,da,de,de_AT,dz,el,en_AU}
-rm -rf /usr/share/locale/{en_CA,eo,es,et,et_EE,eu,fa,fi,fo,fur,fr,ga,gez,gl,gu,haw,he,hi,hr,hu,hy,id,is,it,ja,ka}
-rm -rf /usr/share/locale/{kk,km,kn,ko,kok,ku,ky,lg,lt,lv,mg,mi,mk,ml,mn,mr,ms,mt,nb,ne,nl,nn,no,nso,oc,or,pa,pl}
-rm -rf /usr/share/locale/{ps,pt,pt_BR,qu,ro,ru,rw,si,sk,sl,so,sq,sr,sr*latin,sv,sw,ta,te,th,ti,tig,tk,tl,tr,tt,ur}
-rm -rf /usr/share/locale/{urd,ve,vi,wa,wal,wo,xh,zh,zh_HK,zh_CN,zh_TW,zu}
+find /usr/share/locale/* ! -name en_US | xargs rm -rvf
+find /usr/share/i18n/locales/* ! -name en_US | xargs rm -rvf
+find /usr/share/i18n/charmaps/* ! -name UTF-8.gz | xargs rm -rvf
 
 #
 # Docs cleanup
@@ -59,8 +57,7 @@ rm -rf VBoxGuestAdditions_*.iso VBoxGuestAdditions_*.iso.?
 # Manpages files cleanup
 #
 echo " --> Manpages files cleanup"
-rm -rf /usr/share/man/??
-rm -rf /usr/share/man/??_*
+rm -rf /usr/share/man
 
 #
 # All ~* files cleanup
