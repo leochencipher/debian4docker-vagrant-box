@@ -26,9 +26,11 @@ dpkg --list | awk '{ print $2 }' | grep linux-headers | xargs apt-get -y --force
 
 #
 # Removing unused packages
+#  
+#  @see https://wiki.debian.org/ReduceDebian
 #
-#   Doing the job like this because put all the list in a single apt command will fail
-#   with the first non present package...
+#  Doing the job like this because put all the list in a single apt command will fail
+#  with the first non present package...
 #
 for PACKAGE in build-essential \
 				cpp \
@@ -93,7 +95,16 @@ for PACKAGE in build-essential \
 				libmysqlclient18 \
 				mysql-common \
 				libmagic1 \
-				krb5-locales
+				krb5-locales \
+				acpi \
+				acpid \
+				dc \
+				bc \
+				eject \
+				wamerican \
+				whois \
+				busybox \
+				installation-report
 do
 	if ! apt-get --yes --force-yes purge  "${PACKAGE}"
 	then

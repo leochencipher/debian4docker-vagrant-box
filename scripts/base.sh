@@ -75,3 +75,9 @@ update-grub
 echo " --> Reducing reserved space for the root"
 tune2fs -m 1 /dev/sda1
 tune2fs -m 1 /dev/mapper/debian--vg-root
+
+#
+# Setting /var/log to tmps
+# @see http://forums.debian.net/viewtopic.php?f=16&t=111588#p529834
+#
+echo "tmpfs /var/log/ tmpfs defaults,noatime,nosuid,nodev,noexec,mode=0755,size=20m 0 0" >> /etc/fstab
