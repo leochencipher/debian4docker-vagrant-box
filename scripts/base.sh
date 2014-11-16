@@ -41,3 +41,22 @@ apt-get -y install make
 echo " --> Remove 5s grub timeout to speed up booting"
 sed -ri 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 /usr/sbin/update-grub
+
+
+#
+# Disable unwanted kernel modules
+#
+echo " --> Disable unwanted kernel modules"
+
+# Fix dmesg "vapiix4_smbus 0000:00:07.0: SMBus base address uninitialized - upgrade BIOS or use force_addr=0xaddr"
+#  @see http://askubuntu.com/questions/298290/smbus-bios-error-while-booting-ubuntu-in-virtualbox
+echo "blacklist i2c_piix4" > /etc/modprobe.d/i2c_piix4.conf
+
+# Fix dmesg "intel_rapl: no valid rapl domains found in package 0"
+echo "blacklist intel_rapl" > /etc/modprobe.d/intel_rapl.conf
+
+#
+# Kernel and grub update
+#
+update-initramfs -u -k all
+update-grub

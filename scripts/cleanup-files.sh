@@ -29,8 +29,8 @@ rm -f /var/lib/apt/lists/*
 #
 echo " --> Unused locales cleanup"
 find /usr/share/locale/* ! -name en_US -delete -print
-find /usr/share/i18n/locales/* ! -name en_US -delete -print
-find /usr/share/i18n/charmaps/* ! -name UTF-8.gz -delete -print
+find /usr/share/i18n/locales/* ! -name en_US ! -name C -delete -print
+find /usr/share/i18n/charmaps/* ! -name UTF-8.gz ! -name ANSI* -delete -print
 
 #
 # Unused zoneinfo cleanup

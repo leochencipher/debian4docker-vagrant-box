@@ -72,6 +72,11 @@ for PACKAGE in build-essential \
 				python \
 				python2.7 \
 				libpython2.7-stdlib \
+				docutils-doc \
+				debconf-i18n \
+				ispell \
+				nfs-common \
+				libnfsidmap2 
 do
 	if ! apt-get --yes --force-yes purge  "${PACKAGE}"
 	then

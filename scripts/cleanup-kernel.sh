@@ -12,14 +12,7 @@ rm -rf /lib/modules/*/kernel/drivers/infiniband/*
 rm -rf /lib/modules/*/kernel/drivers/gpu/*
 rm -rf /lib/modules/*/kernel/drivers/isdn/*
 rm -rf /lib/modules/*/kernel/drivers/media/*
-rm -rf /lib/modules/*/kernel/drivers/staging/media/*
-rm -rf /lib/modules/*/kernel/drivers/staging/lustre/*
-rm -rf /lib/modules/*/kernel/drivers/staging/comedi/*
-rm -rf /lib/modules/*/kernel/drivers/staging/rtl8192e/*
-rm -rf /lib/modules/*/kernel/drivers/staging/rtl8192u/*
-rm -rf /lib/modules/*/kernel/drivers/staging/rtl8187se/*
-rm -rf /lib/modules/*/kernel/drivers/staging/rtl8712/*
-rm -rf /lib/modules/*/kernel/drivers/staging/speakup/*
+rm -rf /lib/modules/*/kernel/drivers/staging/*
 rm -rf /lib/modules/*/kernel/fs/ocfs2/*
 rm -rf /lib/modules/*/kernel/fs/ntfs/*
 rm -rf /lib/modules/*/kernel/fs/cifs/*
@@ -29,6 +22,9 @@ rm -rf /lib/modules/*/kernel/fs/jffs2/*
 rm -rf /lib/modules/*/kernel/fs/hfsplus/*
 rm -rf /lib/modules/*/kernel/fs/gfs2/*
 rm -rf /lib/modules/*/kernel/fs/nfs/*
+rm -rf /lib/modules/*/kernel/fs/btrfs/*
+rm -rf /lib/modules/*/kernel/fs/xfs/*
+rm -rf /lib/modules/*/kernel/fs/nls/*
 rm -rf /lib/modules/*/kernel/drivers/net/mac80211/*
 rm -rf /lib/modules/*/kernel/drivers/net/wireless/*
 rm -rf /lib/modules/*/kernel/drivers/net/wimax/*

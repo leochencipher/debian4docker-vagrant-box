@@ -15,6 +15,12 @@ virtualbox-iso|virtualbox-ovf)
     rmdir /tmp/vbox
     rm /home/vagrant/*.iso
     ln -s /opt/VBoxGuestAdditions-*/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
+    
+    # Disable vbox video module since its not wanted
+    sed -ri 's/(running_vboxvideo \|\| \$MODPROBE vboxvideo)/#\1/' /etc/init.d/vboxadd
+    echo "blacklist vboxvideo" > /etc/modprobe.d/vboxvideo.conf
+    update-initramfs -u -k all
+    update-grub
     ;;
 
 *)
