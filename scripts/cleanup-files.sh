@@ -16,7 +16,6 @@ echo " --> Misc unused files cleanup"
 rm -f /usr/bin/omshell
 rm -f /var/cache/debconf/templates.dat
 rm -f /var/cache/debconf/templates.dat-old
-rm -f /usr/bin/openssl
 rm -f /usr/sbin/visudo
 rm -f /usr/bin/oldfind
 rm -rf /usr/share/mime/*
@@ -24,6 +23,7 @@ rm -rf /usr/share/X11/*
 rm -rf /usr/share/fonts/*
 rm -f /var/lib/dpkg/info/linux-image*-amd64.md5sums
 rm -f /var/lib/apt/lists/*
+rm -f /var/lib/apt/lists/partial/*
 
 #
 # Unused locales cleanup
