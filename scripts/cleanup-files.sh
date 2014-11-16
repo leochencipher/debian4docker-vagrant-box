@@ -82,6 +82,12 @@ do
 done
 
 #
+#
+#
+echo " --> Systemd journal cleanup"
+rm -rf /run/log/journal/*
+
+#
 # History files cleanup
 #
 echo " --> History files cleanup"

@@ -36,13 +36,18 @@ echo " --> Installing usefull tools"
 apt-get -y install make
 
 #
+# Setting max systemd journal size
+#  @see https://bbs.archlinux.org/viewtopic.php?id=158510
+SYSTEMD_JOURNAL_CONF_FILE="/etc/systemd/journald.conf"
+sed -ri 's/#SystemMaxUse=.*/SystemMaxUse=10M/' $SYSTEMD_JOURNAL_CONF_FILE
+sed -ri 's/#ForwardToSyslog=.*/ForwardToSyslog=no/' $SYSTEMD_JOURNAL_CONF_FILE
+
+#
 # Remove 5s grub timeout to speed up booting
 #  @see https://github.com/pjkundert/cpppo/blob/master/packer/debian-8-amd64/scripts/base.sh
 #
 echo " --> Remove 5s grub timeout to speed up booting"
 sed -ri 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
-/usr/sbin/update-grub
-
 
 #
 # Disable unwanted kernel modules
