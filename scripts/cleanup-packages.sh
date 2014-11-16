@@ -68,7 +68,10 @@ for PACKAGE in build-essential \
 				man-db \
 				manpages \
 				info \
-				popularity-contest
+				popularity-contest \
+				python \
+				python2.7 \
+				libpython2.7-stdlib \
 do
 	if ! apt-get --yes --force-yes purge  "${PACKAGE}"
 	then
