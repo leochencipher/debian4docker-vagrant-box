@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 echo "#---------------------------------------------------------------------------------------------------"
 echo "# Zeroing out the free space to save space in the final image"
