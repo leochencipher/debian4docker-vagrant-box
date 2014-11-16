@@ -82,11 +82,18 @@ for PACKAGE in build-essential \
 				laptop-detect \
 				tasksel \
 				exim4-daemon-light \
+				exim4-daemon-heavy \
+				exim4-config \
+				exim4-base \
 				bind9-host \
 				dnsutils \
 				libxml2 \
 				at \
-				discover
+				discover \
+				libmysqlclient18 \
+				mysql-common \
+				libmagic1 \
+				krb5-locales
 do
 	if ! apt-get --yes --force-yes purge  "${PACKAGE}"
 	then
