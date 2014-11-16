@@ -1,8 +1,9 @@
 #!/bin/sh
 
-echo "#---------------------------------------------------------------------------------------------------"
-echo "# Docker installation"
-echo "#---------------------------------------------------------------------------------------------------"
+echo
+echo "-------------------------------------"
+echo " Docker installation"
+echo "-------------------------------------"
 #
 # @see https://github.com/ffuenf/vagrant-boxes/blob/master/packer/scripts/docker.sh
 # @see https://docs.docker.com/installation/debian/

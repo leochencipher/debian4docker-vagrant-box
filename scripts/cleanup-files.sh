@@ -1,8 +1,9 @@
 #!/bin/sh
 
-echo "#---------------------------------------------------------------------------------------------------"
-echo "# Cleanup all unused files"
-echo "#---------------------------------------------------------------------------------------------------"
+echo
+echo "-------------------------------------"
+echo " Cleanup all unused files"
+echo "-------------------------------------"
 #
 # @see https://wiki.debian.org/ReduceDebian#Reducing_the_size_of_the_Debian_Installation_Footprint
 # @see https://github.com/ffuenf/vagrant-boxes/

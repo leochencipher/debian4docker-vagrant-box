@@ -1,8 +1,9 @@
 #!/bin/sh
 
-echo "#---------------------------------------------------------------------------------------------------"
-echo "# Tunning vagrant configuration"
-echo "#---------------------------------------------------------------------------------------------------"
+echo
+echo "-------------------------------------"
+echo " Tunning vagrant configuration"
+echo "-------------------------------------"
 
 mkdir -p /home/vagrant/.ssh
 curl -L -k --progress-bar 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -o /home/vagrant/.ssh/authorized_keys

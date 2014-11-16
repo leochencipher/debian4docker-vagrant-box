@@ -1,8 +1,9 @@
 #!/bin/sh
 
-echo "#---------------------------------------------------------------------------------------------------"
-echo "# Fig installation"
-echo "#---------------------------------------------------------------------------------------------------"
+echo
+echo "-------------------------------------"
+echo " Fig installation"
+echo "-------------------------------------"
 #
 # @see http://www.fig.sh/install.html
 # @https://github.com/AlbanMontaigu/docker-enabled-vagrant/blob/master/debian-jessie/vagrant-provision.sh
