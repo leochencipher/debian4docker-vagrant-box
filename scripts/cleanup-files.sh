@@ -58,6 +58,7 @@ echo " --> Virtualbox guest addition source and install files cleanup"
 rm -rf /usr/src/virtualbox-ose-guest*
 rm -rf /usr/src/vboxguest*
 rm -rf VBoxGuestAdditions_*.iso VBoxGuestAdditions_*.iso.?
+rm -rf /opt/VBoxGuestAdditions-*/src
 
 #
 # Manpages files cleanup
