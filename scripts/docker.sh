@@ -27,7 +27,16 @@ echo " --> Adding docker rights to vagrant user"
 usermod -a -G docker vagrant
 
 #
-# Solves AUFS layers limitation
+# Restart the Docker daemon
+#
+echo " --> Stopping docker"
+service docker stop
+
+#
+# Solves AUFS layers limitation 
+#
+# /!\ Do not start docker after that because it will create a big /var/lib/docker/devicemapper
+# directory ! (~ 230Mo) /!\
 #
 echo " --> Switching from aufs to devicemapper to solve layers limitation"
 
@@ -39,12 +48,6 @@ else
     sed -i 's/#DOCKER_OPTS=".*"/DOCKER_OPTS="--storage-driver=devicemapper"/' $DOCKER_CONFIGURATION_FILE
     echo " --> $DOCKER_CONFIGURATION_FILE updated !"
 fi
-
-#
-# Restart the Docker daemon
-#
-echo " --> Restarting docker"
-service docker restart
 
 #
 # enable memory and swap cgroup to avoid docker complains
