@@ -18,7 +18,7 @@ rm -rf output-virtualbox-iso
 #
 echo " --> configuring environment variables"
 export PACKER_OS_TYPE="Debian_64"
-export PACKER_BOX_NAME="debian"
+export PACKER_BOX_NAME="debian4docker"
 export PACKER_ISO_BASE_URL="http://cdimage.debian.org/cdimage/daily-builds/daily/current/amd64/iso-cd"
 export PACKER_ISO_URL="${PACKER_ISO_BASE_URL}/debian-testing-amd64-netinst.iso"
 
