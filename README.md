@@ -12,6 +12,12 @@ Why this box ?
 
 [boot2docker](https://github.com/boot2docker/boot2docker) is the base system, bot very too much small (iso, hard to customize and provision has its limits to be efficient), with a 32bit user space on a 64bit kernel (lots of bin like fig won't work) and built with [tinycore](http://distro.ibiblio.org/tinycorelinux/) which is good but outdated.
 
+** Provided with :**
+
+* docker 1.3.1
+* fig 1.0.1
+* make 4.0
+
 Help me if you want
 -------------------
 
