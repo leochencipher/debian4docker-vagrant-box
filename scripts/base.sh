@@ -74,7 +74,7 @@ update-grub
 #
 echo " --> Reducing reserved space for the root"
 tune2fs -m 1 /dev/sda1
-tune2fs -m 1 /dev/mapper/debian--vg-root
+tune2fs -m 1 /dev/mapper/debian4docker--vg-root
 
 #
 # Setting /var/log to tmps
@@ -97,7 +97,7 @@ cat <<EOT >> /etc/modtd
      _      _     _               ___     _            _             
     | |    | |   (_)             /   |   | |          | |            
   __| | ___| |__  _  __ _ _ __  / /| | __| | ___   ___| | _____ _ __ 
- / _` |/ _ | '_ \| |/ _` | '_ \/ /_| |/ _` |/ _ \ / __| |/ / _ | '__|
+ / _\` |/ _ | '_ \| |/ _\` | '_ \/ /_| |/ _\` |/ _ \ / __| |/ / _ | '__|
 | (_| |  __| |_) | | (_| | | | \___  | (_| | (_) | (__|   |  __| |   
  \__,_|\___|_.__/|_|\__,_|_| |_|   |_/\__,_|\___/ \___|_|\_\___|_|   
 
