@@ -24,7 +24,7 @@ for PROFILE in ${PROFILES[@]}; do
 	#  @see http://www.calazan.com/docker-cleanup-commands/
 	#
 	echo " --> Adding custom docker aliases"
-	cat <<EOT >> $PROFILES/.bash_aliases
+	cat <<EOT >> $PROFILE/.bash_aliases
 # ~/.bash_aliases
 
 # Kill all running containers.
