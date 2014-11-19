@@ -10,13 +10,13 @@ PROFILES=("/home/vagrant")
 #
 # For each profile, do the work
 #
-for PROFILE_FILE in ${PROFILES[@]}; do
-	echo "Customizing $PROFILES"
+for PROFILE in ${PROFILES[@]}; do
+	echo "Customizing $PROFILE"
 	echo " --> Enabling color prompt"
-	sed -ri 's/#force_color_prompt=yes/force_color_prompt=yes/' $PROFILES/.bashrc
+	sed -ri 's/#force_color_prompt=yes/force_color_prompt=yes/' $PROFILE/.bashrc
 
 	echo " --> Enabling all alias"
-	sed -ri 's/#alias/alias/' $PROFILES
+	sed -ri 's/#alias/alias/' $PROFILE/.bashrc
 
 	#
 	# Custom docker aliases
