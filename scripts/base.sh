@@ -78,6 +78,28 @@ tune2fs -m 1 /dev/mapper/debian--vg-root
 
 #
 # Setting /var/log to tmps
-# @see http://forums.debian.net/viewtopic.php?f=16&t=111588#p529834
+#  @see http://forums.debian.net/viewtopic.php?f=16&t=111588#p529834
 #
 echo "tmpfs /var/log/ tmpfs defaults,noatime,nosuid,nodev,noexec,mode=0755,size=20m 0 0" >> /etc/fstab
+
+#
+# Settings custom logo for connection
+#
+cat <<EOT >> /etc/modtd
+                        ##        .
+                  ## ## ##       ==
+               ## ## ## ##      ===
+           /""""""""""""""""\___/ ===
+      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~
+           \______ o          __/
+             \    \        __/
+              \____\______/
+     _      _     _               ___     _            _             
+    | |    | |   (_)             /   |   | |          | |            
+  __| | ___| |__  _  __ _ _ __  / /| | __| | ___   ___| | _____ _ __ 
+ / _` |/ _ | '_ \| |/ _` | '_ \/ /_| |/ _` |/ _ \ / __| |/ / _ | '__|
+| (_| |  __| |_) | | (_| | | | \___  | (_| | (_) | (__|   |  __| |   
+ \__,_|\___|_.__/|_|\__,_|_| |_|   |_/\__,_|\___/ \___|_|\_\___|_|   
+
+                                   docker 1.3.1, fig 1.0.1, make 4.0
+EOT
