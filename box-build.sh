@@ -31,4 +31,4 @@ export PACKER_ISO_CHECKSUM=$(curl --progress-bar -L $PACKER_ISO_BASE_URL/SHA512S
 #
 # Launchs the build
 #
-packer build debian.json
+packer build debian4docker.json
