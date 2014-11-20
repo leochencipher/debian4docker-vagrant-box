@@ -33,7 +33,7 @@ apt-get -y install linux-headers-$(uname -r)
 # Installing usefull tools
 #
 echo " --> Installing usefull tools"
-apt-get -y install make
+apt-get -y install make vim
 
 #
 # Setting max systemd journal size
